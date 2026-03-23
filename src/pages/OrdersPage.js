@@ -9,6 +9,7 @@ import {
   ShoppingOutlined, DownloadOutlined, ReloadOutlined
 } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
+import API from "../api";
 
 const { Title, Text } = Typography;
 const { RangePicker } = DatePicker;
