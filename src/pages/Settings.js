@@ -11,6 +11,7 @@ import {
   PercentageOutlined, HomeOutlined
 } from "@ant-design/icons";
 import API from "../api";
+import axios from "axios";
 
 const { Title, Text } = Typography;
 const { TabPane } = Tabs;
@@ -216,13 +217,13 @@ const Settings = () => {
                         <Form.Item name="confirm" label="Confirm Password"
                           dependencies={["newPassword"]}
                           rules={[{ required: true },
-                            ({ getFieldValue }) => ({
-                              validator(_, v) {
-                                return !v || getFieldValue("newPassword") === v
-                                  ? Promise.resolve()
-                                  : Promise.reject("Passwords do not match");
-                              },
-                            }),
+                          ({ getFieldValue }) => ({
+                            validator(_, v) {
+                              return !v || getFieldValue("newPassword") === v
+                                ? Promise.resolve()
+                                : Promise.reject("Passwords do not match");
+                            },
+                          }),
                           ]}>
                           <Input.Password prefix={<LockOutlined />} placeholder="Confirm password" style={{ height: 44, borderRadius: 8 }} />
                         </Form.Item>
