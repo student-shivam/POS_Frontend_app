@@ -1,0 +1,281 @@
+.main-layout {
+  height: 100vh;
+  background-color: var(--bg-main);
+}
+
+.sidebar-glass {
+  background: var(--card-bg) !important;
+  border-right: 1px solid var(--border-color) !important;
+  padding: 24px 14px !important;
+  z-index: 10;
+  transition: var(--theme-transition);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 16px;
+  margin-bottom: 48px;
+}
+
+.logo-icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #f97316 0%, #ef4444 100%);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  box-shadow: 0 8px 16px rgba(249, 115, 22, 0.25);
+  transition: all 0.3s ease;
+}
+
+.logo-icon:hover {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+.logo-text {
+  font-weight: 900;
+  font-size: 18px;
+  color: var(--text-primary);
+  letter-spacing: -0.8px;
+  white-space: nowrap;
+}
+
+.side-menu {
+  border: none !important;
+}
+
+.side-menu .ant-menu-item {
+  border-radius: 14px !important;
+  margin: 8px 0 !important;
+  font-weight: 700;
+  height: 54px !important;
+  line-height: 54px !important;
+  color: var(--text-secondary) !important;
+  padding: 0 18px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.side-menu .ant-menu-item .anticon {
+  font-size: 18px !important;
+  margin-right: 12px !important;
+}
+
+.side-menu .ant-menu-item:hover {
+  color: var(--primary) !important;
+  background: var(--bg-main) !important;
+}
+
+.side-menu .ant-menu-item-selected {
+  background: var(--primary) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4) !important;
+  font-weight: 700 !important;
+}
+
+/* Ensure icons and text inside selected item are white */
+.side-menu .ant-menu-item-selected .ant-menu-item-icon,
+.side-menu .ant-menu-item-selected .ant-menu-title-content {
+  color: #ffffff !important;
+}
+
+.side-menu .ant-menu-item {
+  margin-top: 8px !important;
+  border-radius: 12px !important;
+  height: 48px !important;
+  line-height: 48px !important;
+  color: var(--text-secondary) !important;
+  font-weight: 600 !important;
+}
+
+.side-menu .ant-menu-item:hover {
+  background: var(--bg-main) !important;
+  color: var(--primary) !important;
+}
+
+.side-menu .ant-menu-item-active .ant-menu-item-icon,
+.side-menu .ant-menu-item-active .ant-menu-title-content,
+.side-menu .ant-menu-item:hover .ant-menu-item-icon,
+.side-menu .ant-menu-item:hover .ant-menu-title-content {
+  color: var(--primary) !important;
+}
+
+.side-menu .ant-menu-item-selected::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15%;
+  height: 70%;
+  width: 4px;
+  background: var(--primary);
+  border-radius: 0 4px 4px 0;
+}
+
+.menu-divider {
+  height: 1px;
+  background: var(--border-color);
+  margin: 20px 8px;
+}
+
+.logout-item {
+  margin-top: 40px !important;
+  color: #ef4444 !important;
+}
+
+.logout-item:hover {
+  background: rgba(239, 68, 68, 0.1) !important;
+}
+
+.header-glass {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(12px);
+  padding: 0 24px !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
+  height: 72px !important;
+  line-height: 72px !important;
+  transition: var(--theme-transition);
+}
+
+.trigger-btn {
+  font-size: 20px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  height: 44px !important;
+  width: 44px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: var(--bg-main) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.trigger-btn:hover {
+  background: var(--card-bg) !important;
+  color: var(--primary);
+  border-color: var(--primary) !important;
+}
+
+/* Unified Header Action Buttons (Toggle, Cart, Profile Wrapper) */
+.header-action-btn {
+  height: 44px !important;
+  width: 44px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px !important;
+  background: var(--bg-main) !important;
+  border: 1px solid var(--border-color) !important;
+  cursor: pointer;
+  padding: 0 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  color: var(--text-primary) !important;
+  overflow: hidden;
+}
+
+.header-action-btn:hover {
+  background: var(--card-bg) !important;
+  border-color: var(--primary) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1) !important;
+}
+
+.theme-toggle-btn {
+  font-size: 22px !important;
+}
+
+.theme-toggle-btn:hover {
+  transform: rotate(12deg) translateY(-2px) !important;
+}
+
+.cart-btn {
+  font-size: 20px !important;
+}
+
+.user-profile .ant-avatar {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.content-area {
+  padding: 32px;
+  overflow-y: auto;
+  background: var(--bg-main);
+  transition: var(--theme-transition);
+}
+
+@media (max-width: 992px) {
+  .logo-text {
+    font-size: 14px;
+    white-space: normal;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-area {
+    padding: 16px;
+  }
+  
+  .header-glass {
+    padding: 0 12px !important;
+    height: 64px !important;
+    line-height: 64px !important;
+  }
+
+  /* Override sidebar for mobile */
+  .sidebar-glass {
+    position: fixed !important;
+    height: 100vh;
+    z-index: 1000;
+  }
+  
+  .ant-layout-sider-collapsed {
+    transform: translateX(-100%);
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  .logo-container {
+    margin-bottom: 32px;
+    padding: 0;
+  }
+  
+  .header-action-btn {
+    height: 38px !important;
+    width: 38px !important;
+  }
+  
+  .theme-toggle-btn {
+    font-size: 18px !important;
+  }
+  
+  .cart-btn {
+    font-size: 18px !important;
+  }
+  
+  .user-profile .ant-avatar {
+    width: 32px !important;
+    height: 32px !important;
+    line-height: 32px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-area {
+    padding: 12px;
+  }
+}

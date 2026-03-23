@@ -1,0 +1,119 @@
+#invoice-POS {
+  background: #fff !important;
+  padding: 20px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 400px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #000 !important;
+  border-radius: 8px;
+}
+
+#invoice-POS h2 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#invoice-POS p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+#invoice-POS #top {
+  text-align: center;
+  border-bottom: 2px dashed #000;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+#invoice-POS .logo {
+  height: 50px;
+  width: 50px;
+  margin: 0 auto 10px;
+  background: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 900;
+  font-family: sans-serif;
+}
+
+#invoice-POS #mid {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+#invoice-POS table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#invoice-POS .tabletitle {
+  border-bottom: 1px solid #000;
+}
+
+#invoice-POS .tabletitle h2 {
+  font-size: 0.75rem;
+  margin: 10px 0;
+}
+
+#invoice-POS .service {
+  border-bottom: 1px solid #eee;
+}
+
+#invoice-POS .itemtext {
+  font-size: 0.8rem;
+  padding: 8px 0;
+}
+
+#invoice-POS .tableitem {
+  vertical-align: top;
+}
+
+#invoice-POS #bot {
+  margin-top: 15px;
+}
+
+#invoice-POS .payment h2 {
+  font-size: 1rem;
+}
+
+#invoice-POS #legalcopy {
+  margin-top: 20px;
+  text-align: center;
+  border-top: 2px dashed #000;
+  padding-top: 15px;
+}
+
+#invoice-POS .legal {
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+/* Hide for screen, show for print */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #invoice-POS,
+  #invoice-POS * {
+    visibility: visible;
+  }
+
+  #invoice-POS {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    box-shadow: none;
+    padding: 0;
+  }
+}

@@ -1,0 +1,416 @@
+:root {
+  /* Colors */
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --secondary: #64748b;
+  --success: #10b981;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  
+  /* Light Theme Defaults */
+  --bg-main: #f8fafc;
+  --card-bg: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --border-color: #cbd5e1;
+  
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  
+  /* Radius & Shadows */
+  --border-radius-lg: 16px;
+  --border-radius-md: 12px;
+  --border-radius-sm: 8px;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  --theme-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme='dark'] {
+  /* Dark Theme Overrides */
+  --bg-main: #020617;
+  --card-bg: #0f172a;
+  
+  /* PERFECT CONTRAST TEXT COLORS */
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  
+  --border-color: #1e293b;
+  
+  --glass-bg: rgba(15, 23, 42, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+body {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-main) !important;
+  color: var(--text-primary) !important;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 500;
+  transition: var(--theme-transition);
+}
+
+/* ========================================================================= */
+/* STRICT DARK MODE TEXT VISIBILITY FOR ANT DESIGN (Crucial Fix)             */
+/* ========================================================================= */
+[data-theme='dark'] .ant-typography,
+[data-theme='dark'] h1, 
+[data-theme='dark'] h2, 
+[data-theme='dark'] h3, 
+[data-theme='dark'] h4,
+[data-theme='dark'] h5,
+[data-theme='dark'] p,
+[data-theme='dark'] span,
+[data-theme='dark'] .ant-card-head-title,
+[data-theme='dark'] .ant-descriptions-item-label,
+[data-theme='dark'] .ant-descriptions-item-content,
+[data-theme='dark'] .ant-form-item-label > label,
+[data-theme='dark'] .ant-empty-description,
+[data-theme='dark'] .ant-statistic-title,
+[data-theme='dark'] .ant-statistic-content,
+[data-theme='dark'] .ant-modal-title {
+  color: var(--text-primary) !important;
+}
+
+[data-theme='dark'] .ant-text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme='dark'] .ant-text-muted,
+[data-theme='dark'] .ant-modal-close-x {
+  color: var(--text-muted) !important;
+}
+
+/* Modal Background override for Dark Mode */
+[data-theme='dark'] .ant-modal-content,
+[data-theme='dark'] .ant-modal-header {
+  background: var(--card-bg) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Ant Message/Toast overrides for Dark Mode */
+[data-theme='dark'] .ant-message-notice-content {
+  background: var(--card-bg) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+[data-theme='dark'] .ant-message-custom-content > span {
+  color: var(--text-primary) !important;
+}
+
+/* ========================================================================= */
+/* ANT DESIGN COMPONENT THEMING (Cards, Tables, Inputs)                      */
+/* ========================================================================= */
+
+/* Cards */
+.ant-card {
+  border-radius: var(--border-radius-lg) !important;
+  border: 1px solid var(--border-color) !important;
+  background: var(--card-bg) !important;
+  color: var(--text-primary) !important;
+  overflow: hidden;
+  transition: var(--theme-transition);
+}
+
+[data-theme='dark'] .ant-card,
+[data-theme='dark'] .ant-card-body {
+  background: var(--card-bg) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Buttons */
+.ant-btn {
+  border-radius: var(--border-radius-md) !important;
+  font-weight: 600 !important;
+  height: 42px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+}
+
+.ant-btn-primary {
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 14px 0 rgba(99, 102, 241, 0.39) !important;
+}
+
+.ant-btn-primary:hover {
+  background: var(--primary-hover) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.23) !important;
+}
+
+[data-theme='dark'] .ant-btn-default {
+  background: var(--bg-main) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme='dark'] .ant-btn-default:hover {
+  border-color: var(--primary) !important;
+  color: var(--primary) !important;
+}
+
+/* Inputs & Forms */
+.ant-input,
+.ant-input-password,
+.ant-input-affix-wrapper,
+.ant-select-selector {
+  border-radius: var(--border-radius-md) !important;
+  height: 42px !important;
+  transition: var(--theme-transition) !important;
+}
+
+/* Fix inner input when wrapped by affix */
+.ant-input-affix-wrapper .ant-input {
+  height: auto !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+.ant-input-affix-wrapper:focus-within,
+.ant-input-affix-wrapper-focused {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2) !important;
+}
+
+/* Dark Mode Inputs */
+[data-theme='dark'] .ant-input,
+[data-theme='dark'] .ant-input-password,
+[data-theme='dark'] .ant-input-affix-wrapper,
+[data-theme='dark'] .ant-select-selector,
+[data-theme='dark'] .ant-picker,
+[data-theme='dark'] .ant-picker-input > input {
+  background-color: var(--bg-main) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme='dark'] .ant-input-password-icon {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme='dark'] .ant-input-affix-wrapper .ant-input {
+  background-color: transparent !important;
+  border: none !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme='dark'] .ant-input-affix-wrapper .anticon {
+  color: var(--text-secondary) !important;
+}
+
+/* Fix browser Autofill text colors in Dark Mode */
+[data-theme='dark'] input:-webkit-autofill,
+[data-theme='dark'] input:-webkit-autofill:hover, 
+[data-theme='dark'] input:-webkit-autofill:focus, 
+[data-theme='dark'] input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--bg-main) inset !important;
+  -webkit-text-fill-color: var(--text-primary) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+[data-theme='dark'] .ant-input::placeholder,
+[data-theme='dark'] .ant-select-selection-placeholder,
+[data-theme='dark'] .ant-picker-input > input::placeholder {
+  color: var(--text-muted) !important;
+}
+
+[data-theme='dark'] .ant-input-password .ant-input {
+  background-color: transparent !important;
+}
+
+/* Tables */
+.ant-table {
+  background: transparent !important;
+}
+
+.ant-table-wrapper .ant-table-container {
+  border-radius: var(--border-radius-md) !important;
+}
+
+.ant-table-thead > tr > th {
+  background: var(--bg-main) !important;
+  color: var(--text-secondary) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  font-size: 11px !important;
+  letter-spacing: 0.05em !important;
+  border-bottom: 2px solid var(--border-color) !important;
+}
+
+.ant-table-tbody > tr > td {
+  border-bottom: 1px solid var(--border-color) !important;
+  padding: 16px !important;
+  color: var(--text-primary) !important;
+}
+
+.ant-table-tbody > tr:hover > td {
+  background: var(--bg-main) !important;
+}
+
+/* Dark Mode Table & Pagination Specifics */
+[data-theme='dark'] .ant-table-thead > tr > th {
+  background: var(--card-bg) !important;
+  color: var(--text-secondary) !important;
+  border-bottom: 2px solid var(--border-color) !important;
+}
+
+[data-theme='dark'] .ant-pagination-item,
+[data-theme='dark'] .ant-pagination-prev .ant-pagination-item-link,
+[data-theme='dark'] .ant-pagination-next .ant-pagination-item-link,
+[data-theme='dark'] .ant-pagination-jump-prev .ant-pagination-item-container .ant-pagination-item-link-icon,
+[data-theme='dark'] .ant-pagination-jump-next .ant-pagination-item-container .ant-pagination-item-link-icon {
+  background: var(--bg-main) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme='dark'] .ant-pagination-item-active {
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+[data-theme='dark'] .ant-pagination-item-active a {
+  color: #fff !important;
+}
+
+[data-theme='dark'] .ant-pagination-item a {
+  color: var(--text-primary) !important;
+}
+
+[data-theme='dark'] .ant-pagination-disabled .ant-pagination-item-link {
+  color: var(--text-muted) !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Tabs */
+[data-theme='dark'] .ant-tabs-nav-list {
+  color: var(--text-muted) !important;
+}
+[data-theme='dark'] .ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: var(--primary) !important;
+}
+[data-theme='dark'] .ant-tabs-ink-bar {
+  background: var(--primary) !important;
+}
+
+/* Dividers */
+[data-theme='dark'] .ant-divider {
+  border-top-color: var(--border-color) !important;
+}
+
+/* Category Highlights */
+[data-theme='dark'] .category {
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+  background: var(--card-bg) !important;
+}
+[data-theme='dark'] .category-active {
+  color: #fff !important;
+  border-color: var(--primary) !important;
+  background: var(--primary) !important;
+}
+
+/* ========================================================================= */
+/* TAGS & BADGES DARK MODE VISIBILITY                                        */
+/* ========================================================================= */
+
+[data-theme='dark'] .ant-tag {
+  background: var(--bg-main) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-secondary) !important;
+}
+
+[data-theme='dark'] .ant-tag span {
+  color: inherit !important;
+}
+
+[data-theme='dark'] .ant-tag-success {
+  color: #4ade80 !important;
+  background: rgba(74, 222, 128, 0.1) !important;
+  border-color: rgba(74, 222, 128, 0.2) !important;
+}
+
+[data-theme='dark'] .ant-tag-processing,
+[data-theme='dark'] .ant-tag-blue,
+[data-theme='dark'] .ant-tag-geekblue {
+  color: #60a5fa !important;
+  background: rgba(96, 165, 250, 0.1) !important;
+  border-color: rgba(96, 165, 250, 0.2) !important;
+}
+
+[data-theme='dark'] .ant-tag-error {
+  color: #f87171 !important;
+  background: rgba(248, 113, 113, 0.1) !important;
+  border-color: rgba(248, 113, 113, 0.2) !important;
+}
+
+[data-theme='dark'] .ant-tag-warning,
+[data-theme='dark'] .ant-tag-orange {
+  color: #fbbf24 !important;
+  background: rgba(251, 191, 36, 0.1) !important;
+  border-color: rgba(251, 191, 36, 0.2) !important;
+}
+
+/* ========================================================================= */
+/* UTILITY CLASSES                                                           */
+/* ========================================================================= */
+
+.glass-morph {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--border-radius-lg) !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-morph:hover {
+  box-shadow: var(--shadow-lg) !important;
+  transform: translateY(-2px);
+}
+
+/* Spinner Overlay */
+.spinner {
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Spacing Utilities */
+.mb-8 { margin-bottom: 32px; }
+.mt-8 { margin-top: 32px; }
+.p-6 { padding: 24px; }
+.gap-4 { gap: 16px; }
+
+/* Responsive scrollbars */
+.category-scroll-container::-webkit-scrollbar {
+  display: none !important;
+}
+.category-scroll-container {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
