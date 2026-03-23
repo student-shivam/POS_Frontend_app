@@ -11,7 +11,6 @@ import {
   PercentageOutlined, HomeOutlined
 } from "@ant-design/icons";
 import API from "../api";
-import axios from "axios";
 
 const { Title, Text } = Typography;
 const { TabPane } = Tabs;
@@ -116,7 +115,7 @@ const Settings = () => {
   const handleSaveStore = async (values) => {
     try {
       setStoreLoading(true);
-      const { data } = await axios.put("/api/settings/store", { ...values, storeLogo });
+      const { data } = await API.put("/api/settings/store", { ...values, storeLogo });
       if (data.success) message.success("Store settings saved!");
     } catch { message.error("Failed to save store settings"); }
     finally { setStoreLoading(false); }
@@ -126,7 +125,7 @@ const Settings = () => {
   const handleSaveTax = async () => {
     try {
       setTaxLoading(true);
-      const { data } = await axios.put("/api/settings/tax", { taxEnabled, taxPercentage });
+      const { data } = await API.put("/api/settings/tax", { taxEnabled, taxPercentage });
       if (data.success) message.success("Tax settings saved!");
     } catch { message.error("Failed to save tax settings"); }
     finally { setTaxLoading(false); }

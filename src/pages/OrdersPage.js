@@ -8,7 +8,6 @@ import {
   CalendarOutlined, SearchOutlined, FilterOutlined,
   ShoppingOutlined, DownloadOutlined, ReloadOutlined
 } from "@ant-design/icons";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const { Title, Text } = Typography;
@@ -43,7 +42,7 @@ const OrdersPage = () => {
         auth.role === "admin"
           ? "/api/bills/get-bills"
           : `/api/bills/get-user-bills/${auth._id}`;
-      const { data } = await axios.get(endpoint);
+      const { data } = await API.get(endpoint);
       const raw = auth.role === "admin" ? data : data.bills || [];
       const sorted = [...raw].sort((a, b) => new Date(b.date) - new Date(a.date));
       setAllOrders(sorted);

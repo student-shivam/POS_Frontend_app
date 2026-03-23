@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import DefaultLayout from "../components/DefaultLayout";
 import { Table, Button, Tag, Space, Select, message, Input, Card, Typography } from "antd";
 import { EyeOutlined, SearchOutlined, ShoppingCartOutlined } from "@ant-design/icons";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import API from "../api";
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -17,7 +17,7 @@ const OrderManagement = () => {
   const getAllOrders = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get("/api/bills/get-bills");
+      const { data } = await API.get("/api/bills/get-bills");
       setOrders(data.sort((a, b) => new Date(b.date) - new Date(a.date)));
       setLoading(false);
     } catch (error) {
@@ -34,7 +34,7 @@ const OrderManagement = () => {
   const handleStatusUpdate = async (value, id) => {
     try {
       setLoading(true);
-      const { data } = await axios.put(`/api/bills/update-status/${id}`, { status: value });
+      const { data } = await API.put(`/api/bills/update-status/${id}`, { status: value });
       if (data.success) {
         message.success(data.message);
         getAllOrders();
