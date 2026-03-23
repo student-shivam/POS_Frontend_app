@@ -1,13 +1,12 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 
-import thunk from "redux-thunk";
 
 import { rootReducer } from "./rootReducer";
-import apiReducer from "./apiSlice"; 
+import apiReducer from "./apiSlice";
 
 const finalReducer = combineReducers({
   rootReducer,
-  api:apiReducer,
+  api: apiReducer,
 });
 
 const intialState = {
@@ -17,7 +16,6 @@ const intialState = {
       : [],
   },
 };
-const middleware = [thunk];
 
 const store = createStore(
   finalReducer,
